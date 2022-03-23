@@ -2,6 +2,8 @@
 
 CREATE DATABASE registrator;
 
+USER registrator;
+
 CREATE TABLE usuarios(
 	id int(4) AUTO_INCREMENT,
 	nome varchar(255) NOT NULL,
@@ -12,5 +14,18 @@ CREATE TABLE usuarios(
 	PRIMARY KEY (id)
 );
 
+/* USUARIO MASTER SEMENTE */
 
-
+INSERT INTO usuarios (
+	nome, 
+	email, 
+	senha, 
+	created_at, 
+	updated_at) 
+VALUES (
+	'San Gritti Junior', 
+	'san@registrator.com.br', 
+	'marmota', 
+	now(), 
+	now()
+);
