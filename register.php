@@ -2,7 +2,7 @@
     <html lang="pt-br">
         <head>
             <meta charset="utf-8">
-            <!-- <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">  CRIAR FAV ICON -->
+            <link rel="icon" type="image/png" sizes="16x16" href="assets/imagens/logo.png">
             <title>Registrator - Controle de Ponto Online !</title>
             
             <!-- IMPORTS JQUERY -->
