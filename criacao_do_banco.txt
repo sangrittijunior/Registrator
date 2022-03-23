@@ -1,0 +1,16 @@
+/* CRIAÇÃO DO BANCO DE DADOS */
+
+CREATE DATABASE registrator;
+
+CREATE TABLE usuarios(
+	id int(4) AUTO_INCREMENT,
+	nome varchar(255) NOT NULL,
+	email varchar(255) NOT NULL,
+	senha varchar(255) NOT NULL,
+	created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+	updated_at TIMESTAMP NOT NULL DEFAULT NOW(),
+	PRIMARY KEY (id)
+);
+
+
+
