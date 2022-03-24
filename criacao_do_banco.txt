@@ -25,7 +25,7 @@ INSERT INTO usuarios (
 VALUES (
 	'San Gritti Junior', 
 	'san@registrator.com.br', 
-	'marmota', 
+	MD5('marmota'), 
 	now(), 
 	now()
 );

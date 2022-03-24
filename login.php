@@ -24,11 +24,11 @@
                         <div class="alinha-image-login">
                             <img class="image-login" src="assets/imagens/user-login.png">
                         </div>
-                        <form>
-                            <input type="text" class="form-control" id="email" name="email" placeholder="E-mail">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Senha">
+                        <form action="logar.php" method="POST">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" required>
+                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required>
                             <div class="d-grid gap-2">
-                                <button class="btn btn-primary" type="button">Acessar</button>
+                                <button class="btn btn-primary" type="submit">Acessar</button>
                             </div>
                         </form>
                         <div class="cadastrar">
