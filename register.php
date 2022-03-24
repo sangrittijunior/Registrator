@@ -24,13 +24,13 @@
                         <div class="alinha-image-login">
                             <img class="image-login" src="assets/imagens/user-register.png">
                         </div>
-                        <form>
-                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo">
-                            <input type="text" class="form-control" id="email" name="email" placeholder="E-mail">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Senha">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Confirme a senha">
+                        <form action="registrar.php" method="POST">
+                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" required>
+                            <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Nome da empresa" required>
+                            <input type="password" class="form-control" id="password" name="senha" placeholder="Senha" required>
                             <div class="d-grid gap-2">
-                                <button class="btn btn-primary" type="button">Cadastrar</button>
+                                <button class="btn btn-primary" type="submit">Cadastrar</button>
                             </div>
                         </form>
                     </div>

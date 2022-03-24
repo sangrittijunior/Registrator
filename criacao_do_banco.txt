@@ -7,25 +7,10 @@ USER registrator;
 CREATE TABLE usuarios(
 	id int(4) AUTO_INCREMENT,
 	nome varchar(255) NOT NULL,
-	email varchar(255) NOT NULL,
+	email varchar(255) NOT NULL UNIQUE,
 	senha varchar(255) NOT NULL,
+	empresa varchar(255) NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT NOW(),
 	updated_at TIMESTAMP NOT NULL DEFAULT NOW(),
 	PRIMARY KEY (id)
-);
-
-/* USUARIO MASTER SEMENTE */
-
-INSERT INTO usuarios (
-	nome, 
-	email, 
-	senha, 
-	created_at, 
-	updated_at) 
-VALUES (
-	'San Gritti Junior', 
-	'san@registrator.com.br', 
-	MD5('marmota'), 
-	now(), 
-	now()
 );

@@ -30,6 +30,6 @@
                             <a href="../index.php" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
                             <a href="../colaboradores.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Colaboradores</span> </a> 
                         </div>
-                    </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sair</span> </a>
+                    </div> <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sair</span> </a>
                 </nav>
             </div>

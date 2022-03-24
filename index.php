@@ -1,13 +1,4 @@
-<?php 
-
-    session_start();
-    
-    if (!isset($_SESSION['idUsuario'])){
-        header("Location: login.php");
-    }
-
-
-?>
+<?php require('validacoes/valida-sessao.php'); ?>
 
 <?php require('layout/header.php'); ?>
 

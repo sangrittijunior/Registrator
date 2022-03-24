@@ -20,6 +20,39 @@
                 return false;
             }
         }
+
+        public function cadastrar($nome, $login, $senha, $empresa){
+            global $pdo;
+
+            $sql = "
+                INSERT INTO usuarios (
+                    nome,
+                    email,
+                    senha,
+                    empresa,
+                    created_at,
+                    updated_at ) 
+                VALUES (
+                    :nome,
+                    :login,
+                    :senha,
+                    :empresa,
+                    now(),
+                    now());";
+
+            $sql = $pdo->prepare($sql);
+            $sql->bindValue("nome", $nome);
+            $sql->bindValue("login", $login);
+            $sql->bindValue("senha", md5($senha));
+            $sql->bindValue("empresa", $empresa);
+
+            try {
+                $sql->execute();
+                $this->login($login, $senha);
+            } catch (PDOException $e){
+                return false;
+            }
+        }
     }
 
 ?>

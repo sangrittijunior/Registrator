@@ -1,3 +1,5 @@
+<?php require('validacoes/valida-sessao-login.php'); ?>
+
 <!DOCTYPE html>
     <html lang="pt-br">
         <head>
@@ -32,7 +34,7 @@
                             </div>
                         </form>
                         <div class="cadastrar">
-                            <span>Ainda não tem uma conta ? <a href="register.html">Cadastre-se</a></span>
+                            <span>Ainda não tem uma conta ? <a href="register.php">Cadastre-se</a></span>
                         </div>  
                     </div>
                 </div>
