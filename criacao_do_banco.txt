@@ -14,3 +14,18 @@ CREATE TABLE usuarios(
 	updated_at TIMESTAMP NOT NULL DEFAULT NOW(),
 	PRIMARY KEY (id)
 );
+
+CREATE TABLE colaboradores(
+	id int(4) AUTO_INCREMENT,
+	usuario_id int(4) NOT NULL,
+	nome varchar(255) NOT NULL,
+	email varchar(255) NOT NULL UNIQUE,
+	telefone varchar(255) NOT NULL,
+	cargo varchar(255) NOT NULL,
+	sexo varchar(255) NOT NULL,
+	data_nascimento date NOT NULL,
+	created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+	updated_at TIMESTAMP NOT NULL DEFAULT NOW(),
+	PRIMARY KEY (id),
+	FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);

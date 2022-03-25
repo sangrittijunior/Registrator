@@ -128,3 +128,23 @@ a {
     height: 32px;
     background-color: #F7F6FB;
 }
+
+.principal{
+    margin-top: calc(30px + 4rem);
+}
+
+.imputCadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 10px;
+} 
+
+.card-colaborador input,
+.card-colaborador select{
+    margin-bottom: 10px;
+    width: 45%;
+    margin-left: 5px;
+}

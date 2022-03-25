@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     class Usuario {
         public function login($login, $senha){
             global $pdo;
@@ -49,6 +51,7 @@
             try {
                 $sql->execute();
                 $this->login($login, $senha);
+                return true;
             } catch (PDOException $e){
                 return false;
             }

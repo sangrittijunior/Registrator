@@ -26,11 +26,11 @@
                         <div class="alinha-image-login">
                             <img class="image-login" src="assets/imagens/user-login.png">
                         </div>
-                        <form action="logar.php" method="POST">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" required>
-                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required>
+                        <form id="login-form" action="validacoes/logar.php" method="POST">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
+                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
                             <div class="d-grid gap-2">
-                                <button class="btn btn-primary" type="submit">Acessar</button>
+                                <button type="button" class="btn btn-primary" name="btn-login" id="btn-login">Acessar</button>
                             </div>
                         </form>
                         <div class="cadastrar">
@@ -39,5 +39,16 @@
                     </div>
                 </div>
             </div>
+            <!-- TODOS OS TOASTS -->
+            <div class="toast align-items-center text-white bg-danger border-0" id="erro" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+            
         </body>
     </html>
+    <script src="assets/js/login.js"></script>
