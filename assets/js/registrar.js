@@ -3,12 +3,12 @@ var erro = new bootstrap.Toast(erro);
 
 $('document').ready(function(){
  
-	$("#btn-login").click(function(){
-		var data = $("#login-form").serialize();
+	$("#btn-cadastrar").click(function(){
+		var data = $("#cadastro-form").serialize();
 			
 		$.ajax({
 			type : 'POST',
-			url  : 'validacoes/logar.php',
+			url  : 'validacoes/registrar.php',
 			data : data,
 			dataType: 'json',
 			success :  function(response){						
@@ -21,7 +21,7 @@ $('document').ready(function(){
                     erro.show();
                 }
 				else{
-					$(".toast-body").html('Usuário ou senha incorreto.');
+					$(".toast-body").html('E-mail já cadastrado !');
 					$("#erro").addClass('bg-danger');
 					$("#erro").removeClass('bg-warning');
 					erro.show();
@@ -29,5 +29,4 @@ $('document').ready(function(){
 		    }
 		});
 	});
- 
 });

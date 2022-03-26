@@ -18,7 +18,7 @@
         $retorno = array('codigo' => 1);
         echo json_encode($retorno);
         exit();
-    }else {
+    } else {
         $retorno = array('codigo' => 0);
         echo json_encode($retorno);
         exit();
