@@ -69,6 +69,41 @@
             $sql->execute();
             
         }
+
+        public function editarColaborador($nome, $email, $telefone, $cargo, $sexo, $salario, $nascimento, $id){
+            global $pdo;
+
+            $sql = "UPDATE 
+                        colaboradores 
+                    set 
+                        nome = :nome, 
+                        email = :email,
+                        telefone = :telefone,
+                        cargo = :cargo,
+                        sexo = :sexo,
+                        salario = :salario,
+                        data_nascimento = :nascimento
+                    WHERE 
+                        id = :id";
+
+            $sql = $pdo->prepare($sql);
+            $sql->bindValue("id", $id);
+            $sql->bindValue("nome", $nome);
+            $sql->bindValue("email", $email);
+            $sql->bindValue("telefone", $telefone);
+            $sql->bindValue("cargo", $cargo);
+            $sql->bindValue("sexo", $sexo);
+            $sql->bindValue("salario", $salario);
+            $sql->bindValue("nascimento", $nascimento);
+            
+            try {
+                $sql->execute();
+                return true;
+            } catch (PDOException $e){
+                return false;
+            }
+        }
+
     }
 
 ?>

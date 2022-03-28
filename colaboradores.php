@@ -5,7 +5,7 @@
 
 <div class="container principal">
     
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalColaborador">
+    <button type="button" class="btn btn-primary" onclick="colaborador.adicionarColaborador();">
         Cadastrar colaborador
     </button>
     
@@ -26,12 +26,11 @@
         </tbody>
     </table>    
 
-    <div class="modal fade" id="modalColaborador" tabindex="-1" aria-labelledby="modalColaboradorLabel" aria-hidden="true">
+    <div class="modal fade" id="modalColaborador" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalColaboradorLabel">Adicionar colaborador</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -50,7 +49,8 @@
                 </div>
                 <div class="modal-footer">
                     <button onclick="colaborador.cancelar()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button onclick="colaborador.salvar()" class="btn btn-primary">Adicionar</button>
+                    <button onclick="colaborador.salvar()" id="botaoAdicionar" class="btn btn-primary">Adicionar</button>
+                    <button onclick="colaborador.salvarEdicao()" id="botaoEditar" class="btn btn-primary">Editar</button>
                 </div>
             </div>
         </div>

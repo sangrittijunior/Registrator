@@ -163,3 +163,11 @@ a {
     margin-right: 10px;
     z-index: 9999;
 }
+
+.esconder{
+    display: none;
+}
+
+.mostrar {
+    display: block;
+}

@@ -2,9 +2,19 @@ class Colaborador {
 
     constructor() {
         this.arrayColaboradores = [];
+        this.id = "";
         this.listaTabela();
         this.erro = document.getElementById('erro');
         this.erro = new bootstrap.Toast(erro);
+    }
+
+    adicionarColaborador(){
+        this.cancelar();
+        $("#botaoAdicionar").addClass('mostrar');
+        $("#botaoAdicionar").removeClass('esconder');
+		$("#botaoEditar").addClass('esconder');
+        $("#botaoEditar").removeClass('mostrar');
+        $('#modalColaborador').modal('show');
     }
 
     salvar() {
@@ -82,7 +92,7 @@ class Colaborador {
             tdNascimento.innerText = this.arrayColaboradores[i].nascimento;
             tdCargo.innerText = this.arrayColaboradores[i].cargo;
             tdSalario.innerText = this.arrayColaboradores[i].salario;
-            tdAcoes.innerHTML = "<a title='Excluir' onclick='colaborador.excluir(" + this.arrayColaboradores[i].id + ")'><i class='bx bx-trash'></i></a><a title='Editar'><i class='bx bx-edit'></i></a>";
+            tdAcoes.innerHTML = "<a title='Excluir' onclick='colaborador.excluir(" + this.arrayColaboradores[i].id + ")'><i class='bx bx-trash'></i></a><a title='Editar' onclick='colaborador.editar(" + this.arrayColaboradores[i].id + ")'><i class='bx bx-edit'></i></a>";
 
         }
     }
@@ -194,6 +204,69 @@ class Colaborador {
             async: false
 		});
         this.listaTabela();
+    }
+
+    editar(id){
+        var colaborador = {};
+        this.id = id;
+
+        for (var i = 0; i < this.arrayColaboradores.length; i++){
+            if (this.arrayColaboradores[i].id == id){
+                colaborador = this.arrayColaboradores[i];
+                break;
+            }
+        }
+
+        document.getElementById('nome').value = colaborador.nome;
+        document.getElementById('email').value = colaborador.email;
+        document.getElementById('telefone').value = colaborador.telefone;
+        document.getElementById('sexo').value = colaborador.sexo;
+        document.getElementById('nascimento').value = colaborador.nascimento;
+        document.getElementById('cargo').value = colaborador.cargo;
+        document.getElementById('salario').value = colaborador.salario;
+
+        $("#botaoAdicionar").addClass('esconder');
+        $("#botaoAdicionar").removeClass('mostrar');
+		$("#botaoEditar").addClass('mostrar');
+        $("#botaoEditar").removeClass('esconder');
+
+        $('#modalColaborador').modal('show');
+    }
+
+    salvarEdicao(){
+        let colaborador = this.getDados();
+        colaborador.id = this.id;
+        
+        if (this.validaCampos(colaborador)) {
+            this.adicionar(colaborador);
+            if (!this.salvarEdicaoBanco(colaborador)){
+                $(".toast-body").html('Email ja cadastrado !');
+                this.erro.show();
+                return false;
+            }
+            this.listaTabela();
+            this.cancelar();
+            $('#modalColaborador').modal('hide');
+        }        
+    }
+
+    salvarEdicaoBanco(colaborador){
+        var teste;    
+        $.ajax({
+			type : 'POST',
+			url  : 'validacoes/editarColaborador.php',
+			data : { dados: JSON.stringify(colaborador) },
+            async: false,
+            success :  function(response){
+                console.log(response);
+                if (response == 0){
+                    teste = false;
+                } else {
+                    teste = true;
+                }						
+		    }
+		});
+        return teste;
     }
 }
 
