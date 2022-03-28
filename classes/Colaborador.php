@@ -2,7 +2,7 @@
 
     class Colaborador {
 
-        public function cadastrar($nome, $email, $telefone, $sexo, $nascimento, $cargo, $cadastrou){
+        public function cadastrar($nome, $email, $telefone, $sexo, $nascimento, $cargo, $cadastrou, $salario){
             global $pdo;
 
             $sql = "
@@ -13,6 +13,7 @@
                     telefone,
                     sexo,
                     cargo,
+                    salario,
                     data_nascimento,
                     created_at,
                     updated_at
@@ -23,6 +24,7 @@
                     :telefone,
                     :sexo,
                     :cargo,
+                    :salario,
                     :nascimento,
                     now(),
                     now()
@@ -35,15 +37,21 @@
             $sql->bindValue("telefone", $telefone);
             $sql->bindValue("sexo", $sexo);
             $sql->bindValue("cargo", $cargo);
+            $sql->bindValue("salario", $salario);
             $sql->bindValue("nascimento", $nascimento);
-            $sql->execute();
 
+            try {
+                $sql->execute();
+                return true;
+            } catch (PDOException $e){
+                return false;
+            }
         }
 
         public function listar($usuarioId){
             global $pdo;
 
-            $sql = "SELECT * FROM colaboradores WHERE usuario_id = :usuarioId";
+            $sql = "SELECT nome, email, telefone, sexo, data_nascimento as nascimento, cargo, salario, id FROM colaboradores WHERE usuario_id = :usuarioId";
             $sql = $pdo->prepare($sql);
             $sql->bindValue("usuarioId", $usuarioId);
             $sql->execute();

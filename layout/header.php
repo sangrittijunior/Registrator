@@ -12,7 +12,7 @@
             <script src="../assets/js//bootstrap.min.js"></script>
             <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
             <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
-
+            
             <!-- CSS para customização -->
             <link href="../assets/css/style.css" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -23,12 +23,12 @@
                 <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
                 <div class="header_img"> <img src="../assets/imagens/user-login.png" alt=""> </div>
             </header>
-            <div class="l-navbar show" id="nav-bar">
+            <div class="l-navbar showNav" id="nav-bar">
                 <nav class="nav">
                     <div> <a href="#" class="nav_logo"> <img class="logo-sidebar" src="../assets/imagens/logo.png"> <span class="nav_logo-name">Registrator</span> </a>
                         <div class="nav_list"> 
-                            <a href="../index.php" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
-                            <a href="../colaboradores.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Colaboradores</span> </a>
+                            <a href="../index.php" class="nav_link dashboard active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
+                            <a href="../colaboradores.php" class="nav_link colaborador"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Colaboradores</span> </a>
                             <a href="../ponto.php" class="nav_link"> <i class='bx bx-time nav_icon'></i> <span class="nav_name">Ponto</span> </a>
                             <a href="../relatorio.php" class="nav_link"> <i class='bx bx-edit nav_icon'></i> <span class="nav_name">Relatorio</span> </a>
                         </div>

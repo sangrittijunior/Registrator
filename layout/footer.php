@@ -17,7 +17,7 @@
 
             if(toggle && nav && bodypd && headerpd){
                 toggle.addEventListener('click', ()=>{
-                    nav.classList.toggle('show')
+                    nav.classList.toggle('showNav')
                     bodypd.classList.toggle('body-pd')
                     headerpd.classList.toggle('body-pd')
                 })
