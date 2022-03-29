@@ -171,3 +171,9 @@ a {
 .mostrar {
     display: block;
 }
+
+.botaoClick{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}

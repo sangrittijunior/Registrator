@@ -29,7 +29,6 @@
                         <div class="nav_list"> 
                             <a href="../index.php" class="nav_link dashboard active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
                             <a href="../colaboradores.php" class="nav_link colaborador"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Colaboradores</span> </a>
-                            <a href="../ponto.php" class="nav_link"> <i class='bx bx-time nav_icon'></i> <span class="nav_name">Ponto</span> </a>
                             <a href="../relatorio.php" class="nav_link"> <i class='bx bx-edit nav_icon'></i> <span class="nav_name">Relatorio</span> </a>
                         </div>
                     </div> <a href="../logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sair</span> </a>

@@ -55,6 +55,41 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="modalPonto" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPontoLabel">Bater ponto</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <select id="pontoColaboradores" class="form-control">
+                            <option value="" select>Escolha um colaborador</option>
+                        </select>
+
+                        <h3>Manhã</h3>
+                        <input type="time" class="form-control" id="salario" placeholder="Entrada">
+                        <input type="time" class="form-control" id="salario" placeholder="Saida">
+
+                        <h3>Tarde</h3>
+                        <input type="time" class="form-control" id="salario" placeholder="Entrada">
+                        <input type="time" class="form-control" id="salario" placeholder="Saida">
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
     <div class="toast align-items-center text-white bg-danger border-0" id="erro" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
             <div class="toast-body">
@@ -71,4 +106,4 @@
     $('.colaborador').addClass('active');
 </script>
 <script src="assets/js/colaboradores.js"></script>
-
+<script src="assets/js/ponto.js"></script>

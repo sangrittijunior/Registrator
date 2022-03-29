@@ -92,7 +92,10 @@ class Colaborador {
             tdNascimento.innerText = this.arrayColaboradores[i].nascimento;
             tdCargo.innerText = this.arrayColaboradores[i].cargo;
             tdSalario.innerText = this.arrayColaboradores[i].salario;
-            tdAcoes.innerHTML = "<a title='Excluir' onclick='colaborador.excluir(" + this.arrayColaboradores[i].id + ")'><i class='bx bx-trash'></i></a><a title='Editar' onclick='colaborador.editar(" + this.arrayColaboradores[i].id + ")'><i class='bx bx-edit'></i></a>";
+            tdAcoes.innerHTML = 
+            "<a title='Excluir' class='botaoClick' onclick='colaborador.excluir(" + this.arrayColaboradores[i].id + ")'><i class='bx bx-trash'></i></a>" + 
+            "<a title='Editar' class='botaoClick' onclick='colaborador.editar(" + this.arrayColaboradores[i].id + ")'><i class='bx bx-edit'></i></a>" + 
+            "<a title='Bater Ponto' class='botaoClick' onclick='ponto.bater(" + this.arrayColaboradores[i].id + ")'><i class='bx bx-timer'></i></a>";
 
         }
     }
